@@ -22,8 +22,6 @@ if game.PlaceId == 2913303231 then
         end
     end
     
-    
-    
     function checkExploit()
         if EVON_LOADED or isArceus() then
             game:Shutdown()
@@ -399,7 +397,11 @@ if game.PlaceId == 2913303231 then
     
             if string.match(msg, '^/adv sky%s') then
                 arg = string.gsub(msg, '^/adv sky%s', '', 1)
-                arg = arg:split(" ")
+                if arg:split(",")[1]:lower() == "skybox" then
+                    arg = arg:split(",")
+                else
+                    arg = arg:split(" ")
+                end
                 local option, value = arg[1], arg[2]
                 if option == "clouds_color" then
                     value = value:split(",")
