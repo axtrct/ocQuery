@@ -365,7 +365,7 @@ if game.PlaceId == 2913303231 then
             end
     
             if string.match(msg, '^/adv filter%s') then
-                arg = string.gsub(msg, '^/adv floor%s', '', 1)
+                arg = string.gsub(msg, '^/adv filter%s', '', 1)
                 arg = ext.cmdParam('advanced', 'filter', arg)
             end
     
