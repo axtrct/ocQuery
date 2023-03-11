@@ -212,6 +212,10 @@ if game.PlaceId == 2913303231 then
             game:GetService("ReplicatedStorage").Events.ResetGlobalPropertyField:FireServer("Options")
         elseif option:lower() == "avatar" then
             game:GetService("ReplicatedStorage").Events.ResetGlobalPropertyField:FireServer("Avatar")
+        elseif option:lower() == "all" then
+            game:GetService("ReplicatedStorage").Events.ResetGlobalPropertyField:FireServer("Avatar")
+            game:GetService("ReplicatedStorage").Events.ResetGlobalPropertyField:FireServer("Options")
+            game:GetService("ReplicatedStorage").Events.ResetGlobalPropertyField:FireServer("Lighting")
         end
     end
     
@@ -231,7 +235,7 @@ if game.PlaceId == 2913303231 then
         elseif option:lower() == "inv_plr" or option:lower() == "invisible_player" then
             game:GetService("ReplicatedStorage").Events.UpdateSettings:FireServer("InvisiblePlayers", valuebool)
         elseif option:lower() == "team_req" or option:lower() == "team_request" then
-            game:GetService("ReplicatedStorage").Events.UpdateSettings:FireServer("InvisiblePlayers", valuenum)
+            game:GetService("ReplicatedStorage").Events.UpdateSettings:FireServer("TeamRequests", valuenum)
         elseif option:lower() == "copyright" then
             game:GetService("ReplicatedStorage").Events.UpdateSettings:FireServer("Copyrighted", valuebool)
         elseif option:lower() == "time" then
