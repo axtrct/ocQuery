@@ -286,6 +286,11 @@ if game.PlaceId == 2913303231 then
         ext.output('If it doesn\'t teleport, please rejoin manually instead.', colors.warning)
     end
     
+    function ext.grantEdit()
+        game.Players.LocalPlayer.PlayerGui.CanEdit.Value = true
+        ext.output("Edit permission is successfully given.", colors.success)
+    end
+    
     function ext.init()
         owner.Chatted:Connect(function(msg)
     
@@ -499,6 +504,10 @@ if game.PlaceId == 2913303231 then
                 elseif tonumber(arg[1]) ~= nil then
                     ext.loadObby(tostring(arg[1]) .. "#" .. arg[2])
                 end
+            end
+                
+            if string.match(msg, '^/grant_edit') then
+                ext . grantEdit ()
             end
         end)
     end
